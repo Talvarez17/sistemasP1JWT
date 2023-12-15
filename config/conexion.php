@@ -5,7 +5,7 @@ class Conexion {
     public static function connect()
     {
         try {
-            $NAMEDB = 'sistemasPropietarios';
+            $NAMEDB = 'sistemaspropietarios';
             $HOST = 'localhost';
             $USER = 'root';
             $PASSWORD = '';

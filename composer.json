@@ -1,0 +1,17 @@
+{
+    "name": "vendor/jwt",
+    "autoload": {
+        "psr-4": {
+            "Vendor\\Jwt\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Tomas Alvarez",
+            "email": "tomalvarez17@gmail.com"
+        }
+    ],
+    "require": {
+        "firebase/php-jwt": "^6.9"
+    }
+}
