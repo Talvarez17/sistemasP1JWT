@@ -75,16 +75,12 @@ class DB
     return $data;
   }
 
-  function delete($p_table, $p_query)
+  function delete($id)
   {
     $DB = new DBManager;
     $con = $DB->conexion();
 
-    $sql = "DELETE FROM";
-
-    $sql .= " $p_table WHERE";
-
-    $sql .= " $p_query";
+    $sql = "DELETE FROM usuarios WHERE id = $id";
 
 
     $result = $con->query($sql);

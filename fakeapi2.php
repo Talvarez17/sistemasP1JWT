@@ -117,12 +117,31 @@ switch ($_METODO) {
 
     break;
     
-    case 'PUT':
-        echo "Se entro al metodo: " . $_METODO;
-    break;
-    
     case 'DELETE':
-        echo "Se entro al metodo: " . $_METODO;
+        try {
+            $URI = getUriSegment();
+            $_ID = $URI[3];
+
+            Auth::Check();
+
+            $res= $DB->delete($_ID);
+
+            echo json_encode($res);
+
+        } catch (Exception $e) {
+
+            //Mandamos el codigo de error
+            http_response_code(401);
+
+            //Se imprime el arreglo con el error
+            echo json_encode(
+                array(
+                    'error' => true,
+                    'message' => "Acceso denegado",
+                    'error' => $e->getMessage(),
+                )
+            );
+        }
     break;
     
 }
